@@ -1,0 +1,6 @@
+<h1>{{object.nom}}</h1>
+<ul>
+  {% for livre in livres %}
+    <li><a href="{% url 'mesBDs:livre-detail' livre.id %}">{{ livre.tome }} - {{ livre.titre }}</a></li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'mesBDs/style.css' %}">
+
+<h1>Séries</h1>
+<ul>
+{% for serie in object_list %}
+    <li><a href="{% url 'mesBDs:serie-detail'  serie.id %}">{{ serie.nom }}</a></li>
+{% empty %}
+    <li>Pas encore de série</li>
+{% endfor %}
+</ul>

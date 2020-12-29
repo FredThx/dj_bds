@@ -1,0 +1,20 @@
+{% load static %}
+<p>Détail de <b>{{ object.titre }}</b>.</p>
+<p>tome n° {{ object.tome }} de la série {{ object.serie }}</p>
+<p> Auteurs :</p>
+<ul>
+  <li>{{ object.auteur1 }}</li>
+  {% if object.auteur2 %}
+    <li> {{ object.auteur2 }}</li>
+  {% endif %}
+</ul>
+
+<p>Editeur : {{ object.editeur}} </p>
+<p>Année de première edition : {{ object.annee_premiere_edition}}</p>
+<p>Année d'édition : {{ object.annee_edition }}</p>
+<p>Date d'achat : {{ object.date_achat }}</p>
+<p>Prix : {{ object.prix }}€</p>
+<p>Commentaires : {{ object.commentaire }}</p>
+<p>
+  <img src="{% static object.couverture %}" alt = "{{ object.couverture }}" titre = "{{ object.couverture }}">
+</p>
